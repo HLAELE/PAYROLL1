@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.payrollmanagementsystem.controller.ViewEmployeeDetailsController">
+    <VBox alignment="CENTER" spacing="20.0" prefHeight="400.0" prefWidth="600.0">
+        <Label text="Employee Details" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+        <Label fx:id="nameLabel" text="Name: " style="-fx-font-size: 16px;" />
+        <Label fx:id="departmentLabel" text="Department: " style="-fx-font-size: 16px;" />
+        <Label fx:id="positionLabel" text="Position: " style="-fx-font-size: 16px;" />
+        <Label fx:id="salaryLabel" text="Salary: " style="-fx-font-size: 16px;" />
+        <Label fx:id="workingHoursLabel" text="Working Hours: " style="-fx-font-size: 16px;" />
+    </VBox>
+</AnchorPane>

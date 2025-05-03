@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.payrollmanagementsystem.controller.EmployeeDashboardController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <ImageView fitWidth="800.0" fitHeight="600.0">
+        <image>
+            <Image url="@/c.jpg" />
+        </image>
+    </ImageView>
+
+    <VBox alignment="CENTER" spacing="20.0"
+          layoutX="225.0" layoutY="150.0"
+          prefHeight="400.0" prefWidth="400.0"
+          style="-fx-background-color: rgba(44,62,80,0.7); -fx-background-radius: 10; -fx-padding: 30; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+
+        <Label text="Employee Dashboard"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+
+        <Label fx:id="employeeNameLabel"
+               style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+
+        <Label fx:id="employeeDepartmentLabel"
+               style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+
+        <Label fx:id="employeePositionLabel"
+               style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+
+        <TextField fx:id="employeeIdField"
+                   promptText="Enter Your Employee ID"
+                   style="-fx-pref-width: 350px; -fx-padding: 8px; -fx-font-size: 14px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Button text="View Payslip"
+                    onAction="#handleViewPayslipButton"
+                    style="-fx-background-color: #3498db; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+
+            <Button text="View Details"
+                    onAction="#handleViewDetailsButton"
+                    style="-fx-background-color: #3498db; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+
+            <Button text="Logout"
+                    onAction="#handleLogout"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+        </HBox>
+
+        <Label fx:id="errorLabel"
+               style="-fx-text-fill: #e74c3c; -fx-font-size: 14px;"
+               visible="false"/>
+    </VBox>
+</AnchorPane>

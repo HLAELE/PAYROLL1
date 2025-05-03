@@ -1,0 +1,68 @@
+/* Main Container */
+.root {
+    -fx-font-family: 'Arial';
+}
+
+/* Form Elements */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.input-field {
+    -fx-font-size: 14px;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 200px;
+    -fx-background-radius: 5;
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+.login-button {
+    -fx-font-size: 14px;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 200px;
+    -fx-background-radius: 5;
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.login-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Messages */
+.error {
+    -fx-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+.success {
+    -fx-fill: #2ecc71;
+    -fx-font-weight: bold;
+}
+
+/* ComboBox Styling */
+.combo-box {
+    -fx-font-size: 14px;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 200px;
+    -fx-background-radius: 5;
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+/* Hyperlink Styling */
+.hyperlink {
+    -fx-text-fill: #3498db;
+    -fx-border-color: transparent;
+    -fx-underline: true;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #2980b9;
+}

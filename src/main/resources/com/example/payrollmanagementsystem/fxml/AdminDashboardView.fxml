@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.payrollmanagementsystem.controller.AdminDashboardController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <ImageView fitWidth="800.0" fitHeight="600.0" preserveRatio="false">
+        <image>
+            <Image url="@/c.jpg"/>
+        </image>
+    </ImageView>
+
+    <VBox spacing="15" alignment="CENTER" layoutX="275.0" layoutY="150.0" prefWidth="250.0"
+          style="-fx-background-color: rgba(44,62,80,0.7); -fx-background-radius: 10; -fx-padding: 20;">
+        <Label text="Admin Dashboard" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+
+        <Button fx:id="manageEmployeesBtn" text="Manage Employees" onAction="#handleManageEmployees" prefWidth="200"
+                style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+        <Button fx:id="calculateSalaryBtn" text="Calculate Salary" onAction="#handleCalculateSalary" prefWidth="200"
+                style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+        <Button fx:id="generatePayslipBtn" text="Generate Payslip" onAction="#handleGeneratePayslip" prefWidth="200"
+                style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+        <Button fx:id="viewReportsBtn" text="View Reports &amp; Charts" onAction="#handleViewReports" prefWidth="200"
+                style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+        <Button fx:id="userManagementBtn" text="User Management" onAction="#handleUserManagement" prefWidth="200"
+                style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+
+        <Separator prefWidth="250"/>
+
+        <Button fx:id="logoutBtn" text="Logout" onAction="#handleLogout" prefWidth="200"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.payrollmanagementsystem.controller.UserManagementController"
+            prefHeight="750.0" prefWidth="900.0">
+
+    <ImageView fitWidth="900.0" fitHeight="750.0">
+        <image>
+            <Image url="@/e.jpg" />
+        </image>
+    </ImageView>
+
+    <VBox spacing="20" alignment="CENTER" prefWidth="900" prefHeight="750">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20" />
+        </padding>
+
+        <Button fx:id="backButton" text="Back to Dashboard"
+                onMouseClicked="#handleBackButtonClick"
+                style="-fx-background-color: rgba(52, 152, 219, 0.7); -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 10px 20px;"
+                alignment="TOP_LEFT"
+                prefWidth="200"/>
+
+        <Label text="User Management" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Username:" style="-fx-text-fill: #ecf0f1;"/>
+            <TextField fx:id="usernameField" promptText="Enter username" prefWidth="250"
+                       style="-fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50; -fx-border-color: #34495e; -fx-border-radius: 5px;"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Password:" style="-fx-text-fill: #ecf0f1;"/>
+            <PasswordField fx:id="passwordField" promptText="Enter password" prefWidth="250"
+                           style="-fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50; -fx-border-color: #34495e; -fx-border-radius: 5px;"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Role:" style="-fx-text-fill: #ecf0f1;"/>
+            <TextField fx:id="roleField" promptText="Enter role (Admin/Employee)" prefWidth="250"
+                       style="-fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50; -fx-border-color: #34495e; -fx-border-radius: 5px;"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="addUserButton" text="Add User"
+                    onMouseClicked="#handleAddUser"
+                    style="-fx-background-color: rgba(46, 204, 113, 0.7); -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 10px 20px;"
+                    prefWidth="200"/>
+            <Button fx:id="updateUserButton" text="Update User"
+                    onMouseClicked="#handleUpdateUser"
+                    style="-fx-background-color: rgba(241, 196, 15, 0.7); -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 10px 20px;"
+                    prefWidth="200"/>
+            <Button fx:id="deleteUserButton" text="Delete User"
+                    onMouseClicked="#handleDeleteUser"
+                    style="-fx-background-color: rgba(231, 76, 60, 0.7); -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 10px 20px;"
+                    prefWidth="200"/>
+        </HBox>
+
+        <TableView fx:id="userTable" prefHeight="300" prefWidth="700"
+                   style="-fx-background-color: rgba(255,255,255,0.8); -fx-border-radius: 10;">
+            <columns>
+                <TableColumn fx:id="usernameColumn" text="Username" prefWidth="350"/>
+                <TableColumn fx:id="roleColumn" text="Role" prefWidth="350"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</AnchorPane>

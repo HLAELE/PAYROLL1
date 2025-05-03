@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.payrollmanagementsystem.controller.ReportController"
+            prefHeight="850.0" prefWidth="1100.0"
+            style="-fx-background-color: #cccccc;">
+    <ScrollPane fitToWidth="true" fitToHeight="true" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <VBox spacing="30" alignment="TOP_CENTER" style="-fx-background-color: #d3d3d3;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Button text="Back"
+                        style="-fx-background-color: #8a8a8a; -fx-text-fill: #e0e0e0; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 8px 16px; -fx-border-radius: 8px; -fx-cursor: hand;"
+                        onAction="#handleBackButtonClick"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="printReportButton" text="Print to PDF"
+                        style="-fx-background-color: #008CBA; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 8px 16px; -fx-border-radius: 8px; -fx-cursor: hand;"
+                        onAction="#handlePrintReport"/>
+            </HBox>
+
+            <Label text="📊 Payroll Reports &amp; Charts"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+
+            <HBox spacing="20" alignment="CENTER">
+                <VBox style="-fx-background-color: #7cb342; -fx-background-radius: 10; -fx-padding: 15;">
+                    <Label text="Total Payroll" style="-fx-text-fill: #f0f4c3; -fx-font-weight: bold;"/>
+                    <Label fx:id="totalPayrollLabel" style="-fx-text-fill: #f0f4c3; -fx-font-size: 18;"/>
+                </VBox>
+
+                <VBox style="-fx-background-color: #64b5f6; -fx-background-radius: 10; -fx-padding: 15;">
+                    <Label text="Avg. Salary" style="-fx-text-fill: #e3f2fd; -fx-font-weight: bold;"/>
+                    <Label fx:id="avgSalaryLabel" style="-fx-text-fill: #e3f2fd; -fx-font-size: 18;"/>
+                </VBox>
+
+                <VBox style="-fx-background-color: #ffb74d; -fx-background-radius: 10; -fx-padding: 15;">
+                    <Label text="Top Department" style="-fx-text-fill: #ffe0b2; -fx-font-weight: bold;"/>
+                    <Label fx:id="topDeptLabel" style="-fx-text-fill: #ffe0b2; -fx-font-size: 18;"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="30" alignment="CENTER">
+
+                <VBox spacing="10" alignment="TOP_CENTER"
+                      style="-fx-background-color: #e0e0e0; -fx-padding: 14; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 6, 0, 0, 2);"
+                      prefWidth="450">
+                    <Label text="Department Salary Distribution" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <PieChart fx:id="salaryPieChart" prefWidth="400" prefHeight="350"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="TOP_CENTER"
+                      style="-fx-background-color: #e0e0e0; -fx-padding: 14; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 6, 0, 0, 2);"
+                      prefWidth="450">
+                    <Label text="Department-wise Payroll Comparison" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <BarChart fx:id="departmentBarChart" prefWidth="400" prefHeight="300" title="Payroll by Department">
+                        <xAxis>
+                            <CategoryAxis label="Departments"
+                                          style="-fx-label-padding: 10px; -fx-font-size: 14px; -fx-text-fill: #444444;"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Total Payroll"
+                                        style="-fx-label-padding: 10px; -fx-font-size: 14px; -fx-text-fill: #444444;"/>
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+
+            </HBox>
+
+            <VBox spacing="10" alignment="TOP_CENTER"
+                  style="-fx-background-color: #e0e0e0; -fx-padding: 14; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 6, 0, 0, 2);"
+                  prefWidth="900">
+                <Label text="Monthly Salary Trends" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                <LineChart fx:id="salaryTrendLineChart" prefWidth="850" prefHeight="320" title="Monthly Salary Growth">
+                    <xAxis>
+                        <CategoryAxis label="Months"
+                                      style="-fx-label-padding: 10px; -fx-font-size: 14px; -fx-text-fill: #444444;"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Salary Amount"
+                                    style="-fx-label-padding: 10px; -fx-font-size: 14px; -fx-text-fill: #444444;"/>
+                    </yAxis>
+                </LineChart>
+            </VBox>
+
+            <Region minHeight="20"/>
+
+        </VBox>
+    </ScrollPane>
+
+</AnchorPane>

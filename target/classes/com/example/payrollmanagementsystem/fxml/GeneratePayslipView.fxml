@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.payrollmanagementsystem.controller.PayslipController"
+            prefWidth="900.0" prefHeight="750.0">
+
+    <ImageView fitWidth="900.0" fitHeight="750.0">
+        <image>
+            <Image url="@/e.jpg" />
+        </image>
+    </ImageView>
+
+    <VBox spacing="20" alignment="CENTER"
+          style="-fx-padding: 20;" prefWidth="900" prefHeight="750">
+
+        <Label text="Generate Payslip" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+
+        <GridPane hgap="10" vgap="10" alignment="CENTER"
+                  style="-fx-background-color: rgba(44,62,80,0.7); -fx-background-radius: 10; -fx-padding: 20;">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="150"/>
+                <ColumnConstraints halignment="LEFT" minWidth="250"/>
+            </columnConstraints>
+
+            <Label text="Select Employee:" style="-fx-font-weight: bold; -fx-text-fill: #ecf0f1;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="employeeComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="250"
+                      style="-fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50; -fx-border-color: #34495e; -fx-border-radius: 5;"/>
+
+            <Label text="Select Month:" style="-fx-font-weight: bold; -fx-text-fill: #ecf0f1;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="monthPicker" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="250"
+                        style="-fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50; -fx-border-color: #34495e; -fx-border-radius: 5;"/>
+        </GridPane>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="generatePayslipBtn" text="Generate Payslip" onAction="#handleGeneratePayslip"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 10px 20px;"
+                    prefWidth="250"/>
+
+            <Button fx:id="backBtn" text="Back" onAction="#handleBack"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 10px 20px;"
+                    prefWidth="250"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

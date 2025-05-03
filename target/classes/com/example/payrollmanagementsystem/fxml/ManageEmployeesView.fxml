@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.payrollmanagementsystem.controller.EmployeeController"
+            prefWidth="800.0" prefHeight="600.0">
+
+    <ImageView fitWidth="800.0" fitHeight="600.0">
+        <image>
+            <Image url="@/a.jpg" />
+        </image>
+    </ImageView>
+
+    <VBox spacing="20" alignment="TOP_CENTER" layoutX="0" layoutY="0" prefWidth="800" prefHeight="600"
+          style="-fx-padding: 20;">
+
+        <HBox alignment="CENTER_LEFT" spacing="10" prefWidth="Infinity">
+            <padding>
+                <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
+            </padding>
+            <Label text="Manage Employees" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+        </HBox>
+
+        <HBox spacing="20" alignment="CENTER">
+            <VBox fx:id="formPane" spacing="10" alignment="TOP_LEFT" prefWidth="300" visible="false" managed="false"
+                  style="-fx-background-color: rgba(44,62,80,0.7); -fx-background-radius: 10; -fx-padding: 10;">
+
+                <Label text="User ID:" style="-fx-text-fill: #ecf0f1;"/>
+                <ComboBox fx:id="userIdComboBox" promptText="Select User ID"
+                          style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+                <Label text="Name:" style="-fx-text-fill: #ecf0f1;"/>
+                <TextField fx:id="employeeNameField"
+                           style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+                <Label text="Department:" style="-fx-text-fill: #ecf0f1;"/>
+                <TextField fx:id="employeeDepartmentField"
+                           style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+                <Label text="Position:" style="-fx-text-fill: #ecf0f1;"/>
+                <TextField fx:id="employeePositionField"
+                           style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+                <Label text="Basic Salary:" style="-fx-text-fill: #ecf0f1;"/>
+                <TextField fx:id="employeeSalaryField"
+                           style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+                <TextField fx:id="employeeIdField" promptText="Employee ID (hidden)" visible="false" managed="false"/>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <padding>
+                        <Insets top="10.0"/>
+                    </padding>
+                    <Button text="Save" onAction="#handleSaveEmployee"
+                            style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+                    <Button text="Cancel" onAction="#handleCancel"
+                            style="-fx-background-color: #e74c3c; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="10" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" prefWidth="400">
+                <TableView fx:id="employeeTableView" VBox.vgrow="ALWAYS"
+                           style="-fx-background-color: rgba(255,255,255,0.8); -fx-border-radius: 10;">
+                    <columns>
+                        <TableColumn fx:id="employeeIdColumn" text="ID" prefWidth="50"/>
+                        <TableColumn fx:id="employeeNameColumn" text="Name" prefWidth="150"/>
+                        <TableColumn fx:id="employeeDepartmentColumn" text="Department" prefWidth="100"/>
+                        <TableColumn fx:id="employeePositionColumn" text="Position" prefWidth="100"/>
+                        <TableColumn fx:id="employeeSalaryColumn" text="Basic Salary" prefWidth="100"/>
+                    </columns>
+                </TableView>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Add" onAction="#handleAddEmployee"
+                            style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+                    <Button text="Update" onAction="#handleUpdateEmployee"
+                            style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+                    <Button text="Delete" onAction="#handleDeleteEmployee"
+                            style="-fx-background-color: #e74c3c; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+                </HBox>
+            </VBox>
+        </HBox>
+
+        <HBox alignment="CENTER" prefWidth="Infinity">
+            <padding>
+                <Insets top="10.0" bottom="10.0"/>
+            </padding>
+            <Button fx:id="backBtn" text="Back" onAction="#handleBack"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

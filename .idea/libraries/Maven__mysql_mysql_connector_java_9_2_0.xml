@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="Maven: mysql:mysql-connector-java:9.2.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/9.2.0/mysql-connector-java-9.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/9.2.0/mysql-connector-java-9.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/9.2.0/mysql-connector-java-9.2.0-sources.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/build/java" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/demo/java" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/generated/java" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/legacy/java" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/main/core-api/java" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/main/core-impl/java" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/main/protocol-impl/java" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/main/user-api/java" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/main/user-impl/java" />
+      <root url="file://$USER_HOME$/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/src/test/java" />
+    </SOURCES>
+  </library>
+</component>

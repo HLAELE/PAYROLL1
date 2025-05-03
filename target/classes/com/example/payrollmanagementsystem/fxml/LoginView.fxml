@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.payrollmanagementsystem.controller.LoginController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <ImageView fitWidth="800.0" fitHeight="600.0">
+        <image>
+            <Image url="@/b.jpg" />
+        </image>
+    </ImageView>
+
+    <StackPane layoutX="275.0" layoutY="150.0" prefWidth="250.0" alignment="CENTER">
+
+        <VBox fx:id="loginForm" alignment="CENTER" spacing="15.0" style="-fx-background-color: rgba(44,62,80,0.7); -fx-background-radius: 10; -fx-padding: 20;">
+            <Label text="Login" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+
+            <TextField fx:id="usernameField" promptText="Username"
+                       style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+            <PasswordField fx:id="passwordField" promptText="Password"
+                           style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+            <Label text="Role:" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1; -fx-font-weight: bold;"/>
+
+            <ComboBox fx:id="roleComboBox" prefWidth="200.0" promptText="Select Role"
+                      style="-fx-padding: 5px; -fx-background-radius: 5px;"/>
+
+            <Button fx:id="loginButton" text="Login" onAction="#handleLoginButtonAction"
+                    style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+
+            <Hyperlink fx:id="registerLink" text="Don't have an account? Register here."
+                       onAction="#handleRegisterLinkAction"
+                       style="-fx-text-fill: #3498db; -fx-underline: true;"/>
+
+            <Label fx:id="errorMessage" visible="false" wrapText="true" prefWidth="200.0"
+                   style="-fx-text-fill: #e74c3c; -fx-font-size: 12px;"/>
+
+            <Label fx:id="successMessage" visible="false" wrapText="true" prefWidth="200.0"
+                   style="-fx-text-fill: #2ecc71; -fx-font-size: 12px;"/>
+        </VBox>
+
+        <VBox fx:id="registerForm" alignment="CENTER" spacing="15.0" style="-fx-background-color: rgba(44,62,80,0.7); -fx-background-radius: 10; -fx-padding: 20;" visible="false">
+            <Label text="Register" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+
+            <TextField fx:id="registerUsernameField" promptText="Username"
+                       style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+            <PasswordField fx:id="registerPasswordField" promptText="Password"
+                           style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password"
+                           style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+            <Label text="Role:" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1; -fx-font-weight: bold;"/>
+
+            <ComboBox fx:id="registerRoleComboBox" prefWidth="200.0" promptText="Select Role"
+                      style="-fx-padding: 5px; -fx-background-radius: 5px;"/>
+
+            <Button fx:id="registerButton" text="Register" onAction="#handleRegisterButtonAction"
+                    style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+
+            <Hyperlink fx:id="backToLoginLink" text="Back to Login"
+                       onAction="#handleBackToLoginLinkAction"
+                       style="-fx-text-fill: #3498db; -fx-underline: true;"/>
+        </VBox>
+
+    </StackPane>
+
+</AnchorPane>

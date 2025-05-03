@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.payrollmanagementsystem.controller.SignUpController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <ImageView fitWidth="800.0" fitHeight="600.0">
+        <image>
+            <Image url="@/a.jpg"/>
+        </image>
+    </ImageView>
+
+    <VBox alignment="CENTER" layoutX="200.0" layoutY="50.0" prefHeight="400.0" prefWidth="400.0" spacing="15.0"
+          style="-fx-background-color: rgba(44,62,80,0.7); -fx-background-radius: 10; -fx-padding: 20;">
+
+        <Label text="Sign Up" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+
+        <Label text="Username" style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+        <TextField fx:id="usernameField" promptText="Enter Username" prefWidth="250"
+                   style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+        <Label text="Password" style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+        <PasswordField fx:id="passwordField" promptText="Enter Password" prefWidth="250"
+                       style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+        <Label text="Confirm Password" style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+        <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" prefWidth="250"
+                       style="-fx-pref-width: 200px; -fx-padding: 8px; -fx-border-color: #34495e; -fx-border-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50;"/>
+
+        <Label text="Role" style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+        <ComboBox fx:id="roleComboBox" promptText="Select Role" prefWidth="250"
+                  style="-fx-padding: 5px; -fx-background-radius: 5px; -fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50; -fx-border-color: #34495e;"/>
+
+        <Button text="Register" fx:id="registerButton" onAction="#handleRegisterAction" prefWidth="150"
+                style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 5px; -fx-padding: 8px 15px;"/>
+
+        <Hyperlink text="Already have an account? Login" fx:id="loginLink" onAction="#handleLoginLinkAction"
+                   style="-fx-text-fill: #3498db; -fx-underline: true;"/>
+
+    </VBox>
+
+</AnchorPane>
